@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kortspill</title>
+    <style>
+        body {
+            background-image: url("kortstokk/felt.webp");
+            background-size: 100% 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: fit-content;
+            max-width: 80%;
+            /* "motveier" -100px på kortene: */
+            margin-left: 100px;
+        }
+
+        /* MERK! Ikke noe flex her! Bare "vanlig" img egenskap: Display inline-block! */
+        img {
+            display: inline-block;
+            width: 150px;
+            margin-left: -100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+    </div>
+
+    <script>
+        // Container elementet vårt (i HTMLen) der vi skal "pushe ut" kortene (append child):
+        const containerElm = document.querySelector(".container")
+
+        const suits = ["hearts", "diamonds", "spades", "clubs"]
+        // Gå igjennom alle suits, og alle 13 tall, og lag img-element som legges til på containeren:
+        for (const suit of suits) {
+            console.log(suit)
+            for (let i = 1; i <= 13; i++) {
+                const imgElm = document.createElement("img")
+                imgElm.src = "kortstokk/" + i + "_of_" + suit + ".png"
+                containerElm.appendChild(imgElm)
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kortspill</title>
+    <style>
+        body {
+            background-image: url("kortstokk/felt.webp");
+            background-size: 100% 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: fit-content;
+            max-width: 80%;
+            /* "motveier" -100px på kortene: */
+            margin-left: 100px;
+        }
+
+        /* MERK! Ikke noe flex her! Bare "vanlig" img egenskap: Display inline-block! */
+        img {
+            display: inline-block;
+            width: 150px;
+            margin-left: -100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+    </div>
+
+    <script>
+        // 1: Lag en liste med alle 52 kort
+        let kortstokk = []
+        const suits = ["hearts", "diamonds", "spades", "clubs"]
+        for (const suit of suits) {
+            for (let i = 1; i <= 13; i++) {
+                const kortNavn = "kortstokk/" + i + "_of_" + suit + ".png"
+                kortstokk.push(kortNavn)
+            }
+        }
+
+        // 2 Shuffle kortstokken:
+        kortstokk = kortstokk.sort(() => Math.random() - 0.5);
+
+        // Se kortstokken vår:
+        console.log(kortstokk)
+        console.log(kortstokk[51]) // Se hva kort nr 52 er
+
+        // Vår container, der vi vil putte kortene (appendChild)
+        const containerElm = document.querySelector(".container")
+
+        for (let i = 0; i < 5; i++) {
+            // "Popper" ut det siste kortet fra kortstokken:
+            const kortnavn = kortstokk.pop()
+            const kortBilde = document.createElement("img")
+            kortBilde.src = kortnavn
+            containerElm.appendChild(kortBilde)
+        }
+
+
+    </script>
+
+</body>
+
+</html>

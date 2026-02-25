@@ -4,11 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kortspill</title>
     <link rel="stylesheet" href="style.css">
+
+
 </head>
 
 <body>
+
+    <div class="container c1">
+    </div>
+
+    <div class="container c2">
+    </div>
+
+    <script>
+
+        let kortstokk = []
+        const containerElm = document.querySelector(".c1")
+        const farger = ['clubs', 'diamonds', 'hearts', 'spades']
+        for (const tall in farger) {
+            for (let i = 1; i <= 13; i++) {
+                const kortNavn = "kortstokk/" + i + "_of_" + tall + ".png"
+                korstokk.push(kortNavn)
+
+            }
+
+
+        }
+        for (let i = 0; i < 5; i++) {
+            // "Popper" ut det siste kortet fra kortstokken:
+            const kortnavn = kortstokk.pop()
+            const kortBilde = document.createElement("img")
+            kortBilde.src = kortnavn
+            containerElm.appendChild(kortBilde)
+        }
+
+    </script>
+
+
 
 </body>
 
