@@ -1,10 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
 body {
     background-image: url("kortstokk/felt.webp");
     background-size: 100% 100%;
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .container {
@@ -22,3 +33,18 @@ img {
     width: 150px;
     margin-left: -100px;
 }
+
+.c1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 60%;
+}
+
+.tomRute {
+    border: 3px white dotted;
+    width: 150px;
+    height: 300px;
+}
+
+
