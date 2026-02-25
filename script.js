@@ -12,7 +12,7 @@ let kortstokk = []
 
         }
         for (let n = 0; n < 5; n++) {
-            // "Popper" ut det siste kortet fra kortstokken:
+
 
             const kortBilde = document.createElement("img")
             kortBilde.src = kortNavn
