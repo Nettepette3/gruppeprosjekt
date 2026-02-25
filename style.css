@@ -22,9 +22,7 @@ body {
     width: fit-content;
     max-width: 80%;
     /* "motveier" -100px på kortene: */
-    margin-left: 100px;
 
-    border: 2px yellow solid;
 }
 
 /* MERK! Ikke noe flex her! Bare "vanlig" img egenskap: Display inline-block! */
@@ -45,6 +43,13 @@ img {
     border: 3px white dotted;
     width: 150px;
     height: 300px;
+    border-radius: 20px;
 }
 
+.c2 {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
 
