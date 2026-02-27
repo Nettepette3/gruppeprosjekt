@@ -28,8 +28,6 @@ body {
 /* MERK! Ikke noe flex her! Bare "vanlig" img egenskap: Display inline-block! */
 img {
     display: inline-block;
-    width: 150px;
-    margin-left: -100px;
 }
 
 .c1 {
@@ -47,6 +45,12 @@ img {
     border-radius: 20px;
 
 
+}
+
+.tomRute > img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .c2 {
