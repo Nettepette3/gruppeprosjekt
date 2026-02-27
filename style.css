@@ -39,18 +39,21 @@ img {
 }
 
 .tomRute {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 3px white dotted;
     width: 200px;
     height: 300px;
     border-radius: 20px;
-
-
 }
 
 .tomRute > img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+}
+
+.red {
+    padding: 22px;
 }
 
 .c2 {
