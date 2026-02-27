@@ -1,20 +1,11 @@
 
-let kortstokk = []
-        const containerElm = document.getElementById("c2")
-        const farger = ['clubs', 'diamonds', 'hearts', 'spades']
-        for (const tall in farger) {
-            for (let i = 1; i <= 13; i++) {
-                const kortNavn = "kortstokk/" + i + "_of_" + tall + ".png"
-                korstokk.push(kortNavn)
+function trekkort() {
+    const random1 = Math.floor(Math.random() * 13) + 1
+    const random2 = Math.floor(Math.random() * 3)
+    let farger = ['clubs', 'diamonds', 'hearts', 'spaces']
+    const farge = farger[random2]
+    const bilde = document.createElement("img")
+    bilde.src = "kortstokk/" + random1 + "_of_" + farge + ".png"
+    console.log(bilde.src)
 
-            }
-
-
-        }
-        for (let n = 0; n < 5; n++) {
-
-
-            const kortBilde = document.createElement("img")
-            kortBilde.src = kortNavn
-            containerElm.appendChild(kortBilde)
-        }
+}
