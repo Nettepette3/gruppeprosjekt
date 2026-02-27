@@ -26,11 +26,11 @@ body {
 }
 
 /* MERK! Ikke noe flex her! Bare "vanlig" img egenskap: Display inline-block! */
-img {
+/*img {
     display: inline-block;
     width: 150px;
-    margin-left: -100px;
-}
+
+}*/
 
 .c1 {
     display: flex;
@@ -57,7 +57,7 @@ img {
     border: 3px solid yellow;
 }
 
-.r2 {}
+
 
 .r2>img {
     width: 200px;
