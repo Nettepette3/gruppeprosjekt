@@ -4,45 +4,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title></title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         img {
             display: block;
             width: 100%;
         }
-
+        
         body {
             background-image: url("kortstokk/felt.webp");
             background-size: 100% 100%;
             min-height: 100vh;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 600;
+        }
+
+        #s1 {
             display: flex;
             align-items: center;
             justify-content: space-around;
+            height: 80vh;
         }
 
         header {
-            height: 100px;
+            height: 20vh;
             display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            color: beige;
         }
+
+        .suits {
+            width: 450px;
+        }
+
+
+        .overskrift {
+            font-size: 80px;
+        }
+
+        .spill {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .spill>div {
+            height: 400px;
+            width: 300px;
+            background-color:aquamarine;
+            border-radius: 10%;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .sorter {}
+
+        .gjett {}
     </style>
 </head>
 
-<header>
-    <div>spill:</div>
-</header>
-
 <body>
-    <section id="s1">
-        <div></div>
+    <header>
+        <img class="suits" src="kortstokk/Card-Suits.png" alt="">
+        <div class="overskrift">Kortspill</div>
+        <img class="suits" src="kortstokk/Card-Suits.png" alt="">
 
-    </section>
+    </header>
+
+    <main>
+        <section id="s1">
+            <div class="spill">
+
+                <div class="sorter">
+                    <h2>Sorter kortstokket</h2>
+                </div>
+
+                <div class="gjett">
+                    <h2>Gjett tallet</h2>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
 </body>
-<footer></footer>
 
 </html>
