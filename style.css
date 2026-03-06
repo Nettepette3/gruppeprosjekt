@@ -25,8 +25,7 @@ body {
 
 }
 
-/* MERK! Ikke noe flex her! Bare "vanlig" img egenskap: Display inline-block! */
-/*img {
+MERK ! Ikke noe flex her ! Bare "vanlig" img egenskap: Display inline-block ! */ img {
     display: inline-block;
 }
 
@@ -48,9 +47,7 @@ body {
     border-radius: 20px;
 }
 
-.tomRute > img {
-
-}
+.tomRute>img {}
 
 .red {
     padding: 22px;

@@ -9,3 +9,10 @@ function trekkort() {
     console.log(bilde.src)
 
 }
+
+let valgtkort = []
+function trykk() {
+
+
+
+}
