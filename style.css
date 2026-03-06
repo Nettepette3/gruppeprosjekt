@@ -28,9 +28,7 @@ body {
 /* MERK! Ikke noe flex her! Bare "vanlig" img egenskap: Display inline-block! */
 /*img {
     display: inline-block;
-    width: 150px;
-
-}*/
+}
 
 .c1 {
     display: flex;
@@ -41,12 +39,21 @@ body {
 }
 
 .tomRute {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 3px white dotted;
     width: 200px;
     height: 300px;
     border-radius: 20px;
+}
 
+.tomRute > img {
 
+}
+
+.red {
+    padding: 22px;
 }
 
 .c2 {
