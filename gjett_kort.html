@@ -6,86 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gjett kortet</title>
 
-    <style>
-        * {
-            margin: 0%;
-            padding: 0%;
-            box-sizing: border-box;
-        }
+    <link rel="stylesheet" href="style2.css">
 
-        img {
-            display: block;
-        }
-
-        body {
-            background-image: url(kortstokk/felt.webp);
-            background-size: 100% 100%;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 100vh;
-            margin: 0;
-
-        }
-
-        header {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            height: 20vh;
-            padding: 30px;
-        }
-
-        header img {
-            width: 100px;
-        }
-
-        header h1 {
-            font-size: 40px;
-            color: white;
-            font-family: 'Times New Roman', Times, serif;
-        }
-
-        main {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            color: white;
-            gap: 30px;
-        }
-
-        .bilde {
-            width: 200px;
-        }
-
-        .svar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-        }
-
-        input {
-            border-radius: 15px;
-            padding: 10px;
-            width: 150px;
-            border: 3px solid black;
-            font-size: 20px;
-
-        }
-
-        button {
-            border-radius: 15px;
-            padding: 10px;
-            background-color: rgb(236, 86, 86);
-            font-family: 'Times New Roman', Times, serif;
-            font-weight: bold;
-            color: white;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
-            font-size: 20px;
-        }
-    </style>
 </head>
 
 <body>
@@ -99,68 +21,22 @@
     <main>
         <h1>Gjett kortet:</h1>
         <p>Prøv å gjett det riktige kortet, ved å skrive inn gjettet ditt under!</p>
-        <img class="bilde" src="kortstokk/10_of_diamonds.png" alt="">
+        <img class="bilde" src="kortstokk/bakside.png" alt="">
         <p id="hint">Hint kommer her!</p>
         <div class="svar">
             <input id="gjett" type="number" onkeydown="handleKeyPress(event)">
+            <select id="gjettSort">
+                <option value="spades">Spar</option>
+                <option value="hearts">Hjerter</option>
+                <option value="clubs">Kløver</option>
+                <option value="diamonds">Ruter</option>
+            </select>
             <button onclick="sjekkSvar(this)">Sjekk</button>
         </div>
     </main>
 
+    <script src="script2.js"></script>
 
-    <script>
-
-        const tilfTall = Math.floor(Math.random() * 13) + 1
-        const suits = ["spades", "hearts", "clubs", "diamonds"]
-        // Tilfeldig indeks for å finne rett suit:
-        const i = Math.floor(Math.random() * suits.length);
-        const suit = suits[i] // i er en tilfeldig indeks
-        // Lager et img-element
-        const bilde = document.querySelector(".bilde")
-
-        bilde.src = "kortstokk/" + tilfTall + "_of_" + suit + ".png"
-
-
-        const fasitTall = tilfTall
-        const fasitFarge = (suit === "hearts" || suit === "diamonds") ? "rød" : "svart"
-
-    
-
-        function sjekkSvar() {
-            const gjettElement = document.getElementById("gjett")
-            const hintElement = document.getElementById("hint")
-
-            const svar = Number(gjettElement.value)
-
-            if (svar === fasitTall) {
-                gjettElement.style.backgroundColor = "lightgreen"
-                hintElement.innerHTML = "🎉 Riktig tall! Kortet var " + fasitTall + " og fargen er " + fasitFarge
-            }
-            else {
-                gjettElement.style.backgroundColor = "lightcoral"
-
-                let melding = ""
-
-                if (svar < fasitTall) {
-                    melding += "Tallet er høyere. "
-                } else {
-                    melding += "Tallet er lavere. "
-                }
-
-                melding += "Kortet er " + fasitFarge + "."
-
-                hintElement.innerHTML = melding
-            }
-        }
-
-
-        function handleKeyPress(event) {
-            if (event.key === 'Enter') {
-                knapp = event.target.nextElementSibling
-                knapp.click()
-            }
-        }
-    </script>
 </body>
 
 </html>
