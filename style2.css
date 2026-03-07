@@ -22,9 +22,21 @@
  header {
      display: flex;
      align-items: center;
+     justify-content: space-between;
      gap: 40px;
      height: 20vh;
      padding: 30px;
+ }
+
+ .headerDiv {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+ }
+
+ .fa-house {
+    font-size: 40px;
+    color: white;
  }
 
  header img {

@@ -1,0 +1,95 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ img {
+     display: block;
+     width: 100%;
+ }
+
+ body {
+     background-image: url("kortstokk/felt.webp");
+     background-size: 100% 100%;
+     min-height: 100vh;
+     font-family: 'Courier New', Courier, monospace;
+     font-weight: 600;
+ }
+
+ header {
+     height: 20vh;
+     display: flex;
+     align-items: center;
+     justify-content: space-evenly;
+     color: beige;
+ }
+
+ .suits {
+     width: 450px;
+ }
+
+ .overskrift {
+     font-size: 80px;
+ }
+
+ #s1 {
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+     height: 80vh;
+ }
+
+
+ .spill {
+     display: flex;
+     align-items: center;
+     gap: 50px;
+ }
+
+ .spill>div {
+     height: 400px;
+     width: 300px;
+     background-color: beige;
+     border-radius: 10%;
+     padding: 20px;
+     display: flex;
+     align-items: center;
+     flex-direction: column;
+     justify-content: space-around;
+ }
+
+ .tekst {
+     display: flex;
+     align-items: center;
+     flex-direction: column;
+ }
+
+ .spillregler>li {
+     margin-top: 15px;
+ }
+
+ a {
+     font-size: 40px;
+     font-weight: bold;
+     background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+     background-size: 200% 200%;
+     -webkit-background-clip: text;
+     background-clip: text;
+     -webkit-text-fill-color: transparent;
+     animation: regnbueBevegelse 5s infinite;
+ }
+
+ @keyframes regnbueBevegelse {
+     0% {
+         background-position: 0% 50%;
+     }
+
+     50% {
+         background-position: 100% 50%;
+     }
+
+     100% {
+         background-position: 0% 50%;
+     }
+ }
