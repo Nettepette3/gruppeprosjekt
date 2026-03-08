@@ -45,6 +45,7 @@ function sjekkSvar() {
     if (gjettTall === fasitTall && gjettSort === fasitSort) {
         bilde.src = "kortstokk/" + fasitTall + "_of_" + fasitSort + ".png"
         hintElement.innerHTML = "🎉 DU VANT! 🎉"
+        visnVinnEffekt()
         tallInput.style.backgroundColor = "lightgreen"
     }
     else {
@@ -52,7 +53,61 @@ function sjekkSvar() {
     }
 }
 
-document.addEventListener("keydown", function(event) {
+function visnVinnEffekt() {
+    // Lag konfetti-container
+    const container = document.createElement("div");
+    container.id = "konfetti-container";
+    container.style.cssText = `
+        position: fixed; top: 0; left: 0;
+        width: 100%; height: 100%;
+        pointer-events: none; z-index: 9999;
+        overflow: hidden;
+    `;
+    document.body.appendChild(container);
+
+    // Lag 120 konfetti-biter
+    const farger = ["#ff6b6b", "#ffd93d", "#6bcb77", "#4d96ff", "#ff922b", "#cc5de8"];
+    for (let i = 0; i < 120; i++) {
+        const bit = document.createElement("div");
+        const farge = farger[Math.floor(Math.random() * farger.length)];
+        const størrelse = Math.random() * 12 + 6;
+        const startX = Math.random() * 100;
+        const rotasjon = Math.random() * 720 - 360;
+        const varighet = Math.random() * 2 + 2;
+        const forsinkelse = Math.random() * 1.5;
+
+        bit.style.cssText = `
+            position: absolute;
+            top: -20px;
+            left: ${startX}%;
+            width: ${størrelse}px;
+            height: ${størrelse * 0.5}px;
+            background: ${farge};
+            border-radius: ${Math.random() > 0.5 ? "50%" : "2px"};
+            animation: fall ${varighet}s ${forsinkelse}s ease-in forwards;
+            transform: rotate(${Math.random() * 360}deg);
+        `;
+        container.appendChild(bit);
+    }
+
+    // Fjern konfetti etter 5 sekunder
+    setTimeout(() => container.remove(), 5000);
+
+    // Vis vinn-overlay
+    const overlay = document.createElement("div");
+    overlay.id = "vinn-overlay";
+    overlay.innerHTML = `
+        <div class="vinn-boks">
+            <div class="vinn-emoji">🏆</div>
+            <h2>DU VANT!</h2>
+            <p>Kortet var ${fasitTall} av ${fasitSort}</p>
+            <button onclick="document.getElementById('vinn-overlay').remove()">Spill igjen?</button>
+        </div>
+    `;
+    document.body.appendChild(overlay);
+}
+
+document.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
         sjekkSvar();
     }
