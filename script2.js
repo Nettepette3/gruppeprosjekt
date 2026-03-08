@@ -5,10 +5,6 @@ const i = Math.floor(Math.random() * suits.length);
 const suit = suits[i] // i er en tilfeldig indeks
 // Lager et img-element
 const bilde = document.querySelector(".bilde")
-
-//bilde.src = "kortstokk/" + tilfTall + "_of_" + suit + ".png"
-
-
 const fasitTall = tilfTall
 const fasitSort = suit
 
@@ -19,7 +15,6 @@ function sjekkSvar() {
     const tallInput = document.getElementById("gjett")
     const sortInput = document.getElementById("gjettSort")
     const hintElement = document.getElementById("hint")
-
     const gjettTall = Number(tallInput.value)
     const gjettSort = sortInput.value
 
@@ -57,10 +52,8 @@ function sjekkSvar() {
     }
 }
 
-
-function handleKeyPress(event) {
-    if (event.key === 'Enter') {
-        knapp = event.target.nextElementSibling
-        knapp.click()
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        sjekkSvar();
     }
-}
+});
