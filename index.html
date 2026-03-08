@@ -4,45 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        img {
-            display: block;
-            width: 100%;
-        }
-
-        body {
-            background-image: url("kortstokk/felt.webp");
-            background-size: 100% 100%;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-        }
-
-        header {
-            height: 100px;
-            display: flex;
-        }
-    </style>
+    <title>Hovedside</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<header>
-    <div>spill:</div>
-</header>
-
 <body>
-    <section id="s1">
-        <div></div>
+    <header>
+        <img class="suits" src="kortstokk/Card-Suits.png" alt="">
+        <div class="overskrift">Kortspill</div>
+        <img class="suits" src="kortstokk/Card-Suits.png" alt="">
 
-    </section>
+    </header>
+
+    <main>
+        <section id="s1">
+            <div class="spill">
+
+                <div class="sorter">
+                    <div class="tekst">
+                        <h2>Sorter kortstokket</h2>
+                        <h3>spill regler:</h3>
+                        <ul class="spillregler">
+                            <li>Trekk kort og plasser med riktig sort</li>
+                            <li>Begyn med ess og jobb oppover mot kongen</li>
+                            <li>Om kortet du trakk ikke kan plasseres trekk igjen</li>
+                        </ul>
+                    </div>
+                    <a href="sorterkort.html">Spill nå!</a>
+
+                </div>
+
+                <div class="gjett">
+                    <div class="tekst">
+                        <h2>Gjett tallet</h2>
+                        <h3>spill regler:</h3>
+                        <ul class="spillregler">
+                            <li>Begyn med å gjette hvilke sort kortet tilsvarer</li>
+                            <li>Prøv etter å gjette tallet</li>
+                            <li>Du vil få hint om kortet er høyere eller lavere</li>
+                        </ul>
+                    </div>
+                    <a href="gjett_kort.html">Spill nå!</a>
+                    
+                </div>
+            </div>
+
+        </section>
+    </main>
+
 </body>
-<footer></footer>
 
 </html>
