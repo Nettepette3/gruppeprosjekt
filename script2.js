@@ -1,15 +1,12 @@
-const tilfTall = Math.floor(Math.random() * 13) + 1
-const suits = ["spades", "hearts", "clubs", "diamonds"]
-// Tilfeldig indeks for å finne rett suit:
-const i = Math.floor(Math.random() * suits.length);
-const suit = suits[i] // i er en tilfeldig indeks
-// Lager et img-element
-const bilde = document.querySelector(".bilde")
-const fasitTall = tilfTall
-const fasitSort = suit
+//Trekk et tilfeldig kort:
+const suits = ["spades", "hearts", "clubs", "diamonds"];
 
+const fasitTall = Math.floor(Math.random() * 13) + 1;          // Tall mellom 1 og 13
+const fasitSort = suits[Math.floor(Math.random() * suits.length)]; // Tilfeldig sort
 
+const bilde = document.querySelector(".bilde"); // Henter kortbildet fra HTML
 
+//Sjekk om gjettet er riktig:
 function sjekkSvar() {
 
     const tallInput = document.getElementById("gjett")
@@ -72,7 +69,6 @@ function visnVinnEffekt() {
         const farge = farger[Math.floor(Math.random() * farger.length)];
         const størrelse = Math.random() * 12 + 6;
         const startX = Math.random() * 100;
-        const rotasjon = Math.random() * 720 - 360;
         const varighet = Math.random() * 2 + 2;
         const forsinkelse = Math.random() * 1.5;
 
@@ -107,6 +103,7 @@ function visnVinnEffekt() {
     document.body.appendChild(overlay);
 }
 
+//Enter-tast:
 document.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
         sjekkSvar();
