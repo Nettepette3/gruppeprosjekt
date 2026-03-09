@@ -2,6 +2,7 @@ let valgtkort = null
 let tidligerekort = []
 let random1 = null
 let random2 = null
+let kortFarge = null
 
 function trekkort() {
     if (valgtkort) {
@@ -9,19 +10,14 @@ function trekkort() {
     }
 
     const kortplass = document.getElementById("randomkort")
-    const random1 = Math.floor(Math.random() * 13) + 1
-    const random2 = Math.floor(Math.random() * 4)
-    
+    random1 = Math.floor(Math.random() * 13) + 1
+    random2 = Math.floor(Math.random() * 4)
+
     let farger = ['clubs', 'diamonds', 'hearts', 'spades']
-    const farge = farger[random2]
-    kortplass.src = "kortstokk/" + random1 + "_of_" + farge + ".png"
+    kortFarge = farger[random2]
 
-
-
-
-
+    kortplass.src = "kortstokk/" + random1 + "_of_" + kortFarge + ".png"
 }
-
 
 function trykk() {
 
@@ -30,11 +26,21 @@ function trykk() {
 
 }
 
-
 function leggtil(x) {
+
     const rute = document.getElementsByClassName("r")[x]
 
     if (!valgtkort) {
+        return
+    }
+
+
+    if (
+        (kortFarge == "diamonds" && !rute.classList.contains("diamond")) ||
+        (kortFarge == "hearts" && !rute.classList.contains("heart")) ||
+        (kortFarge == "clubs" && !rute.classList.contains("club")) ||
+        (kortFarge == "spades" && !rute.classList.contains("spade"))
+    ) {
         return
     }
 
@@ -48,5 +54,4 @@ function leggtil(x) {
 
     valgtkort = null
     trekkort()
-
 }

@@ -22,7 +22,7 @@
      display: flex;
      align-items: center;
      justify-content: space-evenly;
-     color: beige;
+     color: white;
  }
 
  .suits {
@@ -50,7 +50,7 @@
  .spill>div {
      height: 400px;
      width: 300px;
-     background-color: beige;
+     background-color: white;
      border-radius: 10%;
      padding: 20px;
      display: flex;

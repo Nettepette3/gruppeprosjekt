@@ -6,31 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kortspill</title>
     <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
 </head>
 
 <body>
-
+<<<<<<< HEAD
+    <header>
+        <div class="headerDiv">
+            <img src="kortstokk/Anglo-American_card_suits.png" alt="">
+            <h1>Kortspill</h1>
+        </div>
+        <a href="index.html"><i class="fa-solid fa-house"></i></a>
+    </header>
+<main>
     <button id="nyttkort" onclick="trekkort()">
         Trekk kort
     </button>
+    
+=======
 
+
+
+>>>>>>> 79e49d0da6525589193b33c8f009f4319296194b
     <div class="container c1">
         <div class="tomRute r diamond" onclick="leggtil(0)"></div>
         <div class="tomRute r heart" onclick="leggtil(1)"></div>
         <div class="tomRute r club" onclick="leggtil(2)"></div>
         <div class="tomRute r spade" onclick="leggtil(3)"> </div>
     </div>
-
+    
     <div class="container c2">
         <div class="tomRute r1"> <img src="kortstokk/1_of_spades.png" id="randomkort" onclick="trykk()"></div>
-
+        
         <div class="tomRute r1">
             <img src="kortstokk/bakside.png" alt="" onclick="trekkort()">
         </div>
     </div>
+</main>
 
 
     <script src="script.js"></script>

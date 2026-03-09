@@ -9,18 +9,55 @@ img {
     width: 100%;
 }
 
+header {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     gap: 40px;
+     height: 20vh;
+     padding: 30px;
+ }
+
+ .headerDiv {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+ }
+
+ .fa-house {
+    font-size: 40px;
+    color: white;
+ }
+
+ header img {
+     width: 100px;
+ }
+
+ header h1 {
+     font-size: 40px;
+     color: white;
+ }
+
+ main {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     color: white;
+     gap: 30px;
+     padding: 20px;
+ }
+
 body {
     background-image: url("kortstokk/felt.webp");
     background-size: 100% 100%;
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+   
 }
 
 .container {
     width: fit-content;
     max-width: 80%;
+    gap: 20px;
     /* "motveier" -100px på kortene: */
 
 }
@@ -28,9 +65,22 @@ body {
 .c1>.tomRute {
     display: flex;
     flex-direction: column;
-    /* Setter retningen til vertikal */
+    align-items: center;
+    gap: 10px;
+    /* mellomrom mellom kortene */
+    padding-top: 10px;
 }
 
+.c1>.tomRute img {
+    width: 150px;
+    margin-top: -200px;
+    /* gjør at kort overlapper */
+}
+
+.c1>.tomRute img:first-child {
+    margin-top: 0;
+    /* første kort starter øverst */
+}
 
 
 .c1 {
@@ -38,16 +88,18 @@ body {
     align-items: center;
     justify-content: space-evenly;
     width: 60%;
-    border: 3px solid red;
+
 }
 
 .tomRute {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    /* start øverst */
     align-items: center;
-    border: 3px white dotted;
+
     width: 200px;
-    height: 300px;
+    min-height: 300px;
+    /* endret fra height */
     border-radius: 20px;
     background-position: center;
     background-size: contain;
@@ -82,7 +134,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    border: 3px solid yellow;
+
 }
 
 
