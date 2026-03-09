@@ -25,9 +25,13 @@ body {
 
 }
 
-MERK ! Ikke noe flex her ! Bare "vanlig" img egenskap: Display inline-block ! */ img {
-    display: inline-block;
+.c1>.tomRute {
+    display: flex;
+    flex-direction: column;
+    /* Setter retningen til vertikal */
 }
+
+
 
 .c1 {
     display: flex;
@@ -45,9 +49,29 @@ MERK ! Ikke noe flex her ! Bare "vanlig" img egenskap: Display inline-block ! */
     width: 200px;
     height: 300px;
     border-radius: 20px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
-.tomRute>img {}
+.diamond {
+    background-image: url(kortstokk/diamond2.svg);
+}
+
+.heart {
+    background-image: url(kortstokk/heart2.png);
+
+}
+
+.spade {
+    background-image: url(kortstokk/spade2.png);
+
+}
+
+.club {
+    background-image: url(kortstokk/club2.png);
+
+}
 
 .red {
     padding: 22px;
