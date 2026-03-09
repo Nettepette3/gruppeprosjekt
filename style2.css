@@ -16,15 +16,29 @@
      background-repeat: no-repeat;
      height: 100vh;
      margin: 0;
+     font-family: 'Courier New', Courier, monospace;
+     font-weight: 600;
 
  }
 
  header {
      display: flex;
      align-items: center;
+     justify-content: space-between;
      gap: 40px;
      height: 20vh;
      padding: 30px;
+ }
+
+ .headerDiv {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+ }
+
+ .fa-house {
+    font-size: 40px;
+    color: white;
  }
 
  header img {
@@ -34,7 +48,6 @@
  header h1 {
      font-size: 40px;
      color: white;
-     font-family: 'Times New Roman', Times, serif;
  }
 
  main {
@@ -44,6 +57,14 @@
      flex-direction: column;
      color: white;
      gap: 30px;
+     padding: 20px;
+ }
+
+ main h1 {
+    border-bottom: 2px solid white;
+    width: 400px;
+    text-align: center;
+    padding-bottom: 15px;
  }
 
  .bilde {
@@ -83,5 +104,95 @@
      width: 120px;
      border: 3px solid black;
      font-size: 20px;
+
+ }
+
+ @keyframes fall {
+    0%   { transform: translateY(0) rotate(0deg); opacity: 1; }
+    80%  { opacity: 1; }
+    100% { transform: translateY(110vh) rotate(var(--rot, 360deg)); opacity: 0; }
+}
+
+#vinn-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+.vinn-boks {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border: 3px solid gold;
+    border-radius: 20px;
+    padding: 50px 60px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 0 60px rgba(255, 215, 0, 0.5);
+    animation: pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes pop {
+    0%   { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+.vinn-emoji {
+    font-size: 80px;
+    animation: bounce 0.6s infinite alternate;
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-15px); }
+}
+
+.vinn-boks h2 {
+    font-size: 50px;
+    color: gold;
+    text-shadow: 0 0 20px gold;
+    margin: 15px 0 10px;
+    letter-spacing: 3px;
+}
+
+.vinn-boks p {
+    font-size: 18px;
+    opacity: 0.8;
+    margin-bottom: 25px;
+    text-transform: capitalize;
+}
+
+.vinn-boks button {
+    background: gold;
+    color: #1a1a2e;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.vinn-boks button:hover {
+    transform: scale(1.05);
+}
+ 
+ @media (width < 485px) {
+    header img {
+        display: none;
+    }
+
+    input {
+        width: 70px;
+    }
 
  }
